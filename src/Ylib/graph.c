@@ -3130,8 +3130,9 @@ VOID Ygraph_drawRequired(graph)
 
     
   }     /* end for each node */
-  
+#ifndef NOGRAPHICS 
   TWflushFrame();       /* draw any pending events */
+#endif
   
   D("Ygraph_drawRequired",
     TWmessage("Waiting for keypress:");
@@ -3188,8 +3189,9 @@ VOID Ygraph_drawPrime(graph)
     
     
   }     /* end for each node */
-  
+#ifndef NOGRAPHICS 
   TWflushFrame();       /* draw any pending events */
+#endif
 
   D("Ygraph_drawPrime",
     TWmessage("Waiting for keypress:");
@@ -3261,8 +3263,9 @@ VOID Ygraph_draw(graph)
     Ygraph_nodeEnumeratePop(graph);
     
   }     /* end for each node */
-  
+#ifndef NOGRAPHICS 
   TWflushFrame();       /* draw any pending events */
+#endif
   
   D("Ygraph_draw",
     TWmessage("Waiting for keypress:");

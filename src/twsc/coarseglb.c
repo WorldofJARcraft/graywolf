@@ -819,7 +819,9 @@ for( row = 1 ; row <= numRowsG ; row++ ) {
 actual_feed_thru_cells_addedG = feednum ;
 
 /* Added by Tim, 8/26/2013 */
+#ifndef NOGRAPHICS
 expand_heat_index();
+#endif
 
 /*
 TWCLOSE(fp) ;

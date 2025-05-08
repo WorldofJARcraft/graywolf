@@ -10,6 +10,11 @@ target_link_libraries(ycadgraywolf m)
 
 set_target_properties(ycadgraywolf PROPERTIES VERSION 1.0.0 SOVERSION 1)
 
+if(NOGRAPHICS)
+	message("Building ycadgraywolf without GUI")
+	target_compile_definitions(ycadgraywolf INTERFACE NOGRAPHICS)
+endif()
+
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/include ${CMAKE_BINARY_DIR}/include ${X11_INCLUDE_DIR})
 
 install(TARGETS ycadgraywolf DESTINATION ${CMAKE_INSTALL_LIBDIR})

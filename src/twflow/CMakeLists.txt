@@ -6,6 +6,11 @@ target_link_libraries(graywolf ycadgraywolf)
 target_link_libraries(graywolf ${X11_LIBRARIES})
 target_link_libraries(graywolf m)
 
+if(NOGRAPHICS)
+	message("Building graywolf without GUI")
+	target_compile_definitions(graywolf INTERFACE NOGRAPHICS)
+endif()
+
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/include ${CMAKE_BINARY_DIR}/include .)
 
 install(TARGETS graywolf DESTINATION bin)
