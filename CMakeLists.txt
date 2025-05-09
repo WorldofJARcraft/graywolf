@@ -38,6 +38,8 @@ CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/config.h.in ${CMAKE_CURRENT_BINARY_DI
 install(DIRECTORY flow DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/graywolf/bin)
 install(CODE "EXECUTE_PROCESS(COMMAND ln -sf flow.noroute flow WORKING_DIRECTORY ${CMAKE_INSTALL_FULL_LIBEXECDIR}/graywolf/bin/flow)")
 
+option(NOGRAPHICS "Disable GUI - allows you to run graywolf in non-graphical environments like CI")
+
 add_subdirectory(src)
 add_subdirectory(script)
 add_subdirectory(tests)

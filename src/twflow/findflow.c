@@ -198,11 +198,13 @@ INT find_design_type()
 
 	/* now log the beginning time */
 	Ylog_msg( "Syntax started..." ) ;
+#ifndef NOGRAPHICS
 	G( TWstartFrame() ) ;
 	G( TWmessage( "Calling syntax to determine design type" ) ) ;
 	G( TWsetwindow( -165, -55, 165, 55 ) ) ;
 	G( TWdrawCell( 0, -150, -50, 150, 50, TWRED, "syntax" ) ) ;
         G( TWflushFrame() ) ;
+#endif
 
 	/* now execute the command */
 	status = system( buffer ) ;

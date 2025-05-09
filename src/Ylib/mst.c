@@ -133,8 +133,10 @@ void Ymst_draw()
 	    }
 	}
 	closest_pt = closestS[k] ;
+#ifndef NOGRAPHICS
 	TWdrawLine( i, nodeXS[k], nodeYS[k], 
 	    nodeXS[closest_pt], nodeYS[closest_pt], colorS, NULL ) ;
+#endif /* NOGRAPHICS */
 	lowcostS[k] = INF;
 	for( j = 1 ; j < countS ; j++ ){
 	    if( ( c = cost(k,j) ) < lowcostS[j] && lowcostS[j] < INF ){
