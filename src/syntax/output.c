@@ -96,7 +96,8 @@ int celltype ;
 char *cellname ;
 {
 
-    strcpy( current_cellS, cellname ) ;
+    strncpy( current_cellS, cellname, sizeof(current_cellS) ) ;
+    current_cellS[sizeof(current_cellS)-1] = '\0';
     Ysafe_free( cellname ) ;
     /* passify the user */
     if( (++objectS % 50) == 0 ){
@@ -266,7 +267,8 @@ char *side ;
 void set_pinname( pinname )
 char *pinname ;
 {
-    strcpy( cur_pinnameS, pinname ) ;
+    strncpy( cur_pinnameS, pinname, sizeof(cur_pinnameS) ) ;
+    cur_pinnameS[sizeof(cur_pinnameS)-1]='\0';
 } /* end set_pinname */
 
 void check_pos( xpos, ypos ) 
