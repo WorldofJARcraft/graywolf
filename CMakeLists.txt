@@ -39,6 +39,7 @@ install(DIRECTORY flow DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/graywolf/bin)
 install(CODE "EXECUTE_PROCESS(COMMAND ln -sf flow.noroute flow WORKING_DIRECTORY ${CMAKE_INSTALL_FULL_LIBEXECDIR}/graywolf/bin/flow)")
 
 option(NOGRAPHICS "Disable GUI - allows you to run graywolf in non-graphical environments like CI")
+option(YYDEBUG "Enable debug output for yacc parser")
 
 add_subdirectory(src)
 add_subdirectory(script)

@@ -11,6 +11,11 @@ if(NOGRAPHICS)
 	target_compile_definitions(graywolf INTERFACE NOGRAPHICS)
 endif()
 
+if(YYDEBUG)
+	message("Building graywolf with YACC debug")
+	target_compile_definitions(graywolf INTERFACE YYDEBUG)
+endif()
+
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/include ${CMAKE_BINARY_DIR}/include .)
 
 install(TARGETS graywolf DESTINATION bin)
